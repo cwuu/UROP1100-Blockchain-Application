@@ -1,6 +1,6 @@
 # Blockchain Application - Optimization of Gas Cost for Smart Contract
 
-This repository is the testing results for gas cost of different smart contracts.
+This repository is the testing results for gas cost of different smart contracts.<br/>
 Running Platform: <a href="https://remix.ethereum.org">Remix Solidity</a><br/>
 
 Fig 1-3. Examination of using contract as a data storage: <a href="https://github.com/cwuu/UROP1100-Blockchain-Application/blob/master/FIG1_3.sol">FIG1_3.sol</a><br/>
