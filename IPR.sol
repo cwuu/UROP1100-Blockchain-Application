@@ -50,12 +50,24 @@ contract IPR {
         GetLicense(ipr.owner, ipr.account, ipr.parent, ipr.time);  
         return true;
     }
-
+    
+    //Fig2.3 Examination of gas cost of TRANSFER under different condition
     function buyIPR(string _owner) isNotAuthor() public payable returns(string _keys) {
         if (((msg.value / 1 ether) < price) || (msg.sender == account)) {
             revert();
         } else {
             account.transfer(price * (1 ether));
+            addIPR(_owner);
+            GetKeys(author, _owner, keys, price);
+            return keys;
+        }
+    }
+    
+   function buyIPR1(string _owner, address receiver) isNotAuthor() public payable returns(string _keys) {
+        if (((msg.value / 1 ether) < price) || (msg.sender == account)) {
+            revert();
+        } else {
+            receiver.transfer(price * (1 ether));
             addIPR(_owner);
             GetKeys(author, _owner, keys, price);
             return keys;
