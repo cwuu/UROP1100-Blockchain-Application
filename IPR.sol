@@ -78,8 +78,16 @@ contract IPR {
         GetDetail(fileName,author,descrpition,price,creatTime);
         return (fileName,author,descrpition,price,creatTime);
     }
-
+    //Fig6-2 Pattern3 Examination
+    //much gas cost position
+    uint testing = 0;
     function getIPR() public returns(bool) {
+        //less gas cost position
+        //uint testing = 0;
+        for(uint i=0;i<10;i++)
+        {
+            testing = testing + i;
+        }
         if (msg.sender == account) {
             return getRecord();
         }else {
